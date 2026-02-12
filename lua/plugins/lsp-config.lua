@@ -125,3 +125,18 @@ return {
         end,
     },
 }
+
+-- In lua/config/lspconfig.lua or init.lua
+local lspconfig = require('lspconfig')
+
+lspconfig.clangd.setup({
+  -- Optional: Add extra command line arguments
+  -- cmd = { 'clangd', '--background-index', ... },
+  filetypes = { 'c', 'cpp', 'cxx', 'cc' },
+  -- Optional: setup on_attach function for keymaps (highly recommended)
+  on_attach = function(client, bufnr)
+    -- set up keymaps, e.g.,
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  end,
+})
+
