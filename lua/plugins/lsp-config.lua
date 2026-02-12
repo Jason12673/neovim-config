@@ -139,4 +139,6 @@ lspconfig.clangd.setup({
     -- vim.api.nvim_buf_set_keymap(bufnr, 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   end,
 })
+-- Compile and run C++ file with <leader>r keymap
+vim.api.nvim_set_keymap('n', '<leader>r', ':!g++ %:p -o /tmp/%:r && /tmp/%:r<CR>', { noremap = true, silent = true })
 
